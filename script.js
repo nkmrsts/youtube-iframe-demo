@@ -28,8 +28,7 @@ const toggleModal = () =>{
 
 const showModal = () =>{
   $overlay.classList.add("is-show")
-  console.log($iframe);
-  $iframe.src=`${"https://www.youtube.com/embed/" + videoID}`;
+  $iframe.src=`${"https://www.youtube.com/embed/" + videoID }`;
 }
 const hideModal = () =>{
   $overlay.classList.remove("is-show")

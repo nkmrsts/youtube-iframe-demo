@@ -12,7 +12,6 @@
   width: 100%;
   padding-top: 56.25%; /*iframe のサイズ比を元に算出*/
   border-radius: 8px;
-  cursor: pointer;
 }
 
 .youtube-container iframe {
@@ -20,7 +19,8 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .youtube-container img {
@@ -71,9 +71,7 @@
   height: auto;
   padding-top: 56.25%; /*iframe のサイズ比を元に算出*/
 }
-.modal .youtube-container iframe {
-  pointer-events: auto;
-}
+
 .close {
   width: 60px;
   height: auto;
