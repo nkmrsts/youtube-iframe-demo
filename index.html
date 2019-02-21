@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <script src="//www.youtube.com/iframe_api"></script>
+  <title>Youtube Demo</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Youtube Demo</h1>
+    <p class="isPC">PC表示</p>
+    <p class="isSP">SP表示</p>
+    <div class="container-inner">
+        <h2>動画埋め込み</h2>
+        <div class="youtube-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/LPjblqE3xHk?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>サムネイル画像</h2>
+        <div class="youtube-container">
+          <img class="youtube-thumbs" src="http://img.youtube.com/vi/LPjblqE3xHk/0.jpg">
+          <iframe class="isSP" width="560" height="315" src="https://www.youtube.com/embed/LPjblqE3xHk?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+  </div>
+  <div class="overlay">
+    <a href="" class="close">
+        <svg  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 47.971 47.971" xml:space="preserve">
+      <g>
+        <path style="fill:#fff;" d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+          c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+          C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+          s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"/>
+      </svg>
+    </a>
+    
+    <div class="modal">
+      <div class="youtube-container">
+        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>

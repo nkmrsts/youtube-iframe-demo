@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.youtube-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /*iframe のサイズ比を元に算出*/
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.youtube-container iframe {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.youtube-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  top: -12%;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .2s linear;
+
+}
+.overlay.is-show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s linear;
+}
+
+.modal {
+  width: 100%;
+  max-width: 1000px;
+  z-index: 3;
+  margin: 0 auto;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  box-sizing: border-box;
+}
+
+.modal .youtube-container {
+  width: 100%;
+  height: auto;
+  padding-top: 56.25%; /*iframe のサイズ比を元に算出*/
+}
+.modal .youtube-container iframe {
+  pointer-events: auto;
+}
+.close {
+  width: 60px;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.isPC {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  .container-inner {
+    width: 560px;
+  }
+  .youtube-container {
+    width: 480px;
+    padding-top: 48%;
+  }
+  .youtube-container img {
+    position: absolute;
+    left: 0;
+    top: -17%;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .isSP {
+    display: none;
+  }
+  .isPC {
+    display: block;
+  }
+}
