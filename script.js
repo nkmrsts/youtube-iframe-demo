@@ -1,5 +1,5 @@
 const videoID = "mHrjM6oVez0"
-const API_KEY = "AIzaSyAAMGra5O3O8yTeex6hACxJCt4z5U5j8vU"
+const API_KEY = "AIzaSyAFpEcbf6Ojp1hx8vyc8La8wYDejuzM1JA"
 const $youtubeThumbs = document.querySelector('.youtube-thumbs');
 const $youtubeThumbsImg = document.querySelector('.youtube-thumbsImg');
 const $overlay = document.querySelector('.overlay');
@@ -8,7 +8,10 @@ const $closeBtn = document.querySelector('.close');
 // Youtube Data API の読み込み
 fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoID}&key=${API_KEY}&fields=items(id,snippet(channelTitle,title,thumbnails),statistics)&part=snippet,contentDetails,statistics`)
   .then(function(response) {
-    return response.json();
+    if(response.ok) {
+      return response.json();
+    }
+    throw new Error('Network response was not ok.');
   })
   .then(function(myJson) {
     const title = myJson.items[0].snippet.title;
@@ -21,6 +24,10 @@ fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoID}&key=${API_KEY}
 
     $youtubeThumbsImg.src = thumbnails
     $youtubeThumbs.appendChild(div)
+  })
+  .catch((error) => { 
+    $youtubeThumbsImg.src = `http://img.youtube.com/vi/${videoID}/0.jpg`
+    console.error('Error:', error) 
   });
 
 // IFrame Player API の読み込み
